@@ -40,6 +40,29 @@ body {
     padding: 16px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.button {
+    display: flex;
+    background-color: aliceblue;
+    width: 100px;
+    height: 100px;
+    padding: 16px;
+    margin: 16px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.results {
+    background-color: aliceblue;
+    margin-top: 60px;
+    text-align: center;
+}
+
 .footer {
     background-color: rgb(110, 110, 196);
     justify-content: center;
