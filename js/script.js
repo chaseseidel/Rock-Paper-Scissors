@@ -6,53 +6,47 @@ function getComputerChoice () {
 
 function playRound (playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    computerSelection = getComputerChoice().toLowerCase();
 
     if (playerSelection == computerSelection) {
         return 'It\'s a tie! Better luck next time';
     }
     else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+        playerScore++;
         return 'You Win! Rock beats Scissors';
     }
     else if (playerSelection == 'rock' && computerSelection == 'paper') {
+        computerScore++;
         return 'You Lose! Paper beats Rock';
     }
     else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+        computerScore++;
         return 'You Lose! Scissors beats Paper';
     }
     else if (playerSelection == 'paper' && computerSelection == 'rock') {
+        playerScore++;
         return 'You Win! Paper beats Rock';
     }
     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+        playerScore++;
         return 'You Win! Scissors beats Paper'
     }
     else {
+        computerScore++;
         return 'You Lose! Rock beats Scissors'
     }
 }
 
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
+function updateScore(string) {
+    results.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+    result.textContent = string;
+}
 
-    for (let i = 0; i < 5; i++) {
-        let playerInput = prompt('Do you want to play rock, paper, or scissors?');
-        let result = playRound(playerInput, getComputerChoice());
-
-        if (result.includes('You Win!')) {
-            playerScore++;
-        }
-        else {
-            computerScore++;
-        }
-        console.log(result);
-        console.log(`Player: ${playerScore} Computer: ${computerScore}`)
+function declareWinner() {
+    if (computerScore == 5) {
+        result.textContent = 'You Lost!'
     }
-
-    if (playerScore > computerScore) {
-        console.log('Congratulations! You Win!');
-    }
-    else {
-        console.log('You Lose! Better luck next time!');
+    else if (playerScore == 5) {
+        result.textContent = 'You Won!'
     }
 }
