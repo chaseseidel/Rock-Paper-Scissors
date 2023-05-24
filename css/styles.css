@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     margin: 0;
     min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .header, .footer {
@@ -35,7 +36,7 @@ body {
     gap: 16px;
 }
 
-.player-score {
+.player-score, .computer-score {
     background-color: aliceblue;
     padding: 16px;
 }
@@ -59,8 +60,8 @@ body {
 
 .results {
     background-color: aliceblue;
-    margin-top: 60px;
     text-align: center;
+    margin-top: 50px;
 }
 
 .footer {
