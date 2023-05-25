@@ -3,22 +3,23 @@ body {
     flex-direction: column;
     margin: 0;
     min-height: 100vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, arial, sans-serif;
+    background-image: url(../img/forest-background.jpg);
+    background-size:cover;
 }
 
-.header, .footer {
-    display: flex;
-    padding: 16px;
+img {
+    width: 175px;
+    height: 175px;
 }
 
 .header {
     display: flex;
-    background-color: rgb(161, 209, 161);
+    padding: 16px;
     justify-content: center;
-}
+    font-size: 72px;
 
-.title {
-    background-color: white;
+    color: white;
 }
 
 .main-container {
@@ -27,7 +28,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(201, 102, 102);
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .scores {
@@ -36,35 +38,100 @@ body {
     gap: 16px;
 }
 
-.player-score, .computer-score {
-    background-color: aliceblue;
-    padding: 16px;
+.player-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
+    margin: 16px;
 }
 
 .button {
     display: flex;
-    background-color: aliceblue;
-    width: 100px;
-    height: 100px;
+    background-color: rgb(212, 212, 212);
+    width: 175px;
+    height: 175px;
     padding: 16px;
     margin: 16px 0px;
     justify-content: center;
+    border-width: 4px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgb(248, 250, 143);
     align-items: center;
+    transition: all .2s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem rgb(248, 250, 143);
+    border-color: rgb(248, 250, 143);
 }
 
 .results {
-    background-color: aliceblue;
-    text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.footer {
-    background-color: rgb(110, 110, 196);
-    justify-content: center;
+.scroll {
+    flex: 1;
+}
+
+.text {
+    position: absolute;
+    top: 25%;
+    font-size: 32px;
+    font-family: 'Lucida Handwriting', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(20, 16, 10);
+}
+
+.player-score, .computer-score {
+    position: absolute;
+    font-size: 32px;
+}
+
+.scores {
+    justify-content: space-evenly;
+}
+
+.user {
+    position: absolute;
+    top: 25%;
+    font-size: 24px;
+}
+
+.banner {
+    width: 250px;
+    height: 250px;
+}
+
+.reset {
+    position: absolute;
+    top: 95%;
+    display: none;
+}
+
+#reset-button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    padding: 6px 30px;
+    transition: 0.1s ease-in-out;
+}
+
+#reset-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem rgb(0, 0, 0);;
 }
